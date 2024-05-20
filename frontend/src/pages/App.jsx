@@ -8,27 +8,26 @@ function App() {
   const {
     isLoading, isError, data: projects, error,
   } = useQuery({ queryKey: ['projects'], queryFn: getProjects });
-  if (isLoading) {
-    return <span>Loading...</span>;
-  }
-
-  if (isError) {
-    return (
-      <span>
-        Error:
-        {error.message}
-      </span>
-    );
-  }
 
   return (
     <div className="App">
       <h2 className="section-title">Ver outros Projetos Proponentes</h2>
       <div className="cards">
+        {isLoading && <span>Carregando...</span>}
+        {isError && (
+        <span>
+          {error?.message}
+          :
+          {' '}
+          Oops! Algo deu errado, tente novamente. Se persistir, contacte o suporte.
+        </span>
+        )}
+        {projects && (
         <CardCarousel
           slides={projects}
           options={{ dragFree: true }}
         />
+        )}
       </div>
 
     </div>
