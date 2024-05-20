@@ -1,0 +1,314 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Simbi Social - Projetos Rouanet",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/project/all": {
+            "get": {
+                "tags": [
+                    "Projetos"
+                ],
+                "summary": "Lista todos os projetos",
+                "operationId": "e3a0a04012d0b430ff2cd5a7fb9fac40",
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProjetoRouanet"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/project/{id}": {
+            "get": {
+                "tags": [
+                    "Projetos"
+                ],
+                "summary": "Obtém um projeto específico",
+                "operationId": "3f5e6bd4581f6a339470f60d5c5e7538",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProjetoRouanet"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Projetos"
+                ],
+                "summary": "Atualiza um projeto específico",
+                "operationId": "554a5d72a62650cc0b4e2249afec4ad3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProjetoRouanet"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Projeto atualizado com sucesso"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Projetos"
+                ],
+                "summary": "Deleta um projeto específico",
+                "operationId": "efd5fa0ba796ee17263060ae99fda836",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Projeto deletado com sucesso"
+                    }
+                }
+            }
+        },
+        "/api/project": {
+            "post": {
+                "tags": [
+                    "Projetos"
+                ],
+                "summary": "Cria um novo projeto",
+                "operationId": "fe078c0c9bed65ca59d5e6dc021de401",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProjetoRouanet"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Projeto criado com sucesso"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ProjetoRouanet": {
+                "required": [
+                    "id_projeto",
+                    "pronac",
+                    "ano_projeto",
+                    "nome",
+                    "segmento",
+                    "area",
+                    "uf",
+                    "municipio",
+                    "data_inicio",
+                    "data_termino",
+                    "situacao",
+                    "mecanismo",
+                    "enquadramento",
+                    "valor_captado",
+                    "valor_aprovado",
+                    "acessibilidade",
+                    "ficha_tecnica",
+                    "impacto_ambiental",
+                    "especificacao_tecnica",
+                    "democratizacao",
+                    "sinopse",
+                    "resumo",
+                    "valor_projeto",
+                    "outras_fontes",
+                    "valor_proposta",
+                    "valor_solicitado",
+                    "objetivo",
+                    "estrategia_execucao",
+                    "link_incentivadores"
+                ],
+                "properties": {
+                    "id_projeto": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "pronac": {
+                        "type": "string",
+                        "example": "123456"
+                    },
+                    "ano_projeto": {
+                        "type": "string",
+                        "example": "2023"
+                    },
+                    "nome": {
+                        "type": "string",
+                        "example": "Projeto Teste"
+                    },
+                    "segmento": {
+                        "type": "string",
+                        "example": "Cultura"
+                    },
+                    "area": {
+                        "type": "string",
+                        "example": "Artes"
+                    },
+                    "uf": {
+                        "type": "string",
+                        "example": "SP"
+                    },
+                    "municipio": {
+                        "type": "string",
+                        "example": "São Paulo"
+                    },
+                    "data_inicio": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2023-01-01"
+                    },
+                    "data_termino": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2023-12-31"
+                    },
+                    "situacao": {
+                        "type": "string",
+                        "example": "Aprovado"
+                    },
+                    "mecanismo": {
+                        "type": "string",
+                        "example": "Lei Rouanet"
+                    },
+                    "enquadramento": {
+                        "type": "string",
+                        "example": "Artístico"
+                    },
+                    "valor_captado": {
+                        "type": "string",
+                        "example": "50000.00"
+                    },
+                    "valor_aprovado": {
+                        "type": "string",
+                        "example": "50000.00"
+                    },
+                    "acessibilidade": {
+                        "type": "string",
+                        "example": "Sim"
+                    },
+                    "objetivos": {
+                        "type": "string",
+                        "example": "Objetivos do projeto"
+                    },
+                    "justificativa": {
+                        "type": "string",
+                        "example": "Justificativa do projeto"
+                    },
+                    "etapa": {
+                        "type": "string",
+                        "example": "Fase 1"
+                    },
+                    "ficha_tecnica": {
+                        "type": "string",
+                        "example": "Ficha técnica"
+                    },
+                    "impacto_ambiental": {
+                        "type": "string",
+                        "example": "Impacto ambiental"
+                    },
+                    "especificacao_tecnica": {
+                        "type": "string",
+                        "example": "Especificações técnicas"
+                    },
+                    "providencia": {
+                        "type": "string",
+                        "example": "Providências"
+                    },
+                    "democratizacao": {
+                        "type": "string",
+                        "example": "Democratização do acesso"
+                    },
+                    "sinopse": {
+                        "type": "string",
+                        "example": "Sinopse do projeto"
+                    },
+                    "resumo": {
+                        "type": "string",
+                        "example": "Resumo do projeto"
+                    },
+                    "valor_projeto": {
+                        "type": "string",
+                        "example": "60000.00"
+                    },
+                    "outras_fontes": {
+                        "type": "string",
+                        "example": "20000.00"
+                    },
+                    "valor_proposta": {
+                        "type": "string",
+                        "example": "80000.00"
+                    },
+                    "valor_solicitado": {
+                        "type": "string",
+                        "example": "50000.00"
+                    },
+                    "objetivo": {
+                        "type": "string",
+                        "example": "Objetivo principal"
+                    },
+                    "estrategia_execucao": {
+                        "type": "string",
+                        "example": "Descrição da estratégia de execução do projeto"
+                    },
+                    "link_incentivadores": {
+                        "type": "string",
+                        "example": "Link para informações sobre os incentivadores do projeto"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
