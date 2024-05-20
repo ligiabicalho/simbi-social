@@ -66,6 +66,8 @@ php artisan serve
 
 O backend estará disponível em http://localhost:8000.
 
+<strong>A documentação da API no Swagger /api/documentationpode ser acessada pela rota `/api/documentation`</strong>
+
 ## 3. Configuração do Frontend (ReactJS)
 Navegue até o diretório do frontend:
 
