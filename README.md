@@ -2,18 +2,19 @@
 
 
 ## Pré-requisitos
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
+Antes de começar, verifique se você atende aos seguintes requisitos:
 
-Você instalou a versão LTS do Node.js e do npm.
-Você instalou o Composer.
-Você tem um ambiente de desenvolvimento PHP configurado (recomendado Laravel Homestead ou XAMPP).
+- Versão LTS do Node.js e do npm.
+- Composer.
+- PHP configurado (recomendado Laravel Homestead ou XAMPP).
+
 
 # Passos para clonar e rodar o repositório localmente
 
 ## 1. Clonando o Repositório
 ```sh
 git clone https://github.com/usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+cd simbi-teste
 ```
 
 ## 2. Configuração do Backend (Laravel)
@@ -66,7 +67,7 @@ php artisan serve
 
 O backend estará disponível em http://localhost:8000.
 
-<strong>A documentação da API no Swagger /api/documentationpode ser acessada pela rota `/api/documentation`</strong>
+<strong>A documentação da API no Swagger pode ser acessada pela rota `/api/documentation`</strong>
 
 ## 3. Configuração do Frontend (ReactJS)
 Navegue até o diretório do frontend:
