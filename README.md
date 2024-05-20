@@ -1,20 +1,22 @@
-# Teste técnico Simbi Social
-
+# Case técnico Simbi Social
+- Construção de backend em PHP/Laravel  
+- Frontend em ReactJS  
+- Documentação da API com Swagger   
 
 ## Pré-requisitos
 Antes de começar, verifique se você atende aos seguintes requisitos:
 
 - Versão LTS do Node.js e do npm.
-- Composer.
 - PHP configurado (recomendado Laravel Homestead ou XAMPP).
+- Composer.
 
 
 # Passos para clonar e rodar o repositório localmente
 
 ## 1. Clonando o Repositório
 ```sh
-git clone https://github.com/usuario/nome-do-repositorio.git
-cd simbi-teste
+git clone https://github.com/ligiabicalho/simbi-social.git
+cd simbi-social
 ```
 
 ## 2. Configuração do Backend (Laravel)

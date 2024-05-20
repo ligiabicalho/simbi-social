@@ -14,7 +14,7 @@ class SeedFromSQL extends Seeder
      */
     public function run()
     {
-        $sql = file_get_contents('./tb_projeto_rouanet_teste.sql');
+        $sql = file_get_contents('./database/seeders/tb_projeto_rouanet_teste.sql');
 
         DB::unprepared($sql);
     }
